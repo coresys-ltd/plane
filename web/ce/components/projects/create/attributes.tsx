@@ -76,7 +76,7 @@ const ProjectAttributes: FC<Props> = (props) => {
             return (
               <div className="flex-shrink-0 h-7" tabIndex={getIndex("lead")}>
                 <MemberDropdown
-                  value={typeof value === 'object' && value !== null && 'id' in value ? value.id : value ?? null}
+                  value={typeof value === 'object' && value !== null && 'id' in value ? String(value.id) : typeof value === 'string' ? value : null}
                   onChange={(lead) => onChange(lead === value ? null : lead)}
                   placeholder={t("lead")}
                   multiple={false}
