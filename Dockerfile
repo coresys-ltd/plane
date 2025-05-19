@@ -16,10 +16,8 @@ RUN npm install --legacy-peer-deps
 # Disable TS check
 ENV NEXT_DISABLE_TYPECHECK=true
 
-# Skip TypeScript checking to bypass broken DTS build in @plane/editor
-ENV TURBO_FORCE=true
-ENV NEXT_DISABLE_TYPECHECK=true
-RUN cd web && npm run build
+# Skip broken TypeScript build in monorepo
+RUN turbo run build --filter=web --no-deps
 
 # --- Runner image (for smaller final image) ---
 FROM node:18-slim AS runner
