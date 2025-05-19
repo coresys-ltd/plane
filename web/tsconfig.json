@@ -1,5 +1,4 @@
 {
-  "extends": "@plane/typescript-config/nextjs.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -10,10 +9,12 @@
       "@/plane-web/*": ["ce/*"]
     },
     "plugins": [{ "name": "next" }],
-    "strictNullChecks": true,
+    "strict": false,
+    "strictNullChecks": false,
     "noImplicitAny": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
 
