@@ -4,7 +4,7 @@ COPY . .
 
 FROM base AS deps
 RUN npm install -g turbo
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 FROM deps AS build
 RUN turbo run build --filter=web...
