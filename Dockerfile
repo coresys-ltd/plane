@@ -17,7 +17,7 @@ RUN npm install --legacy-peer-deps
 ENV NEXT_DISABLE_TYPECHECK=true
 
 # Skip broken TypeScript build in monorepo
-RUN turbo run build --filter=web --no-deps
+RUN turbo run build --filter=web...
 
 # --- Runner image (for smaller final image) ---
 FROM node:18-slim AS runner
