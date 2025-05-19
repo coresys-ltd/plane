@@ -7,7 +7,7 @@ RUN npm install -g turbo
 RUN npm install --legacy-peer-deps
 
 FROM deps AS build
-RUN turbo run build --filter=web... -- --no-dts
+RUN turbo run build --filter=web...
 
 FROM node:18-slim AS runner
 WORKDIR /app
