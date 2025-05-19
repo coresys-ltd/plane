@@ -2,7 +2,7 @@ name: Build and Push Plane Image
 
 on:
   push:
-    branches: [main]
+    branches: [preview]
 
 jobs:
   build:
